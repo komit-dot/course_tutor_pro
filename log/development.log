@@ -1,0 +1,2043 @@
+Started GET "/" for ::1 at 2022-12-15 17:08:54 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.8ms | Allocations: 773)
+Completed 200 OK in 32ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 6762)
+
+
+  [1m[35m (95.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (122.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCourses (20221216130318)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject" varchar, "duration_month" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221216130318"]]
+  [1m[36mTRANSACTION (159.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTutors (20221216130555)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "tutors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "full_name" varchar, "course_id" integer, "address" varchar, "mobile_no" integer, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221216130555"]]
+  [1m[36mTRANSACTION (162.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-16 13:06:08.436432"], ["updated_at", "2022-12-16 13:06:08.436432"]]
+  [1m[36mTRANSACTION (144.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2022-12-16 19:21:22 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.6ms | Allocations: 661)
+Completed 200 OK in 78ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 5478)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 19:21:38 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/controllers/api/v1/courses_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/courses_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/courses_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/courses_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 19:22:30 +0530
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 2.1ms | ActiveRecord: 0.5ms | Allocations: 3443)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 20:08:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 50ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 5506)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer Application"], ["duration_month", 36], ["created_at", "2022-12-16 14:46:58.099691"], ["updated_at", "2022-12-16 14:46:58.099691"]]
+  [1m[36mTRANSACTION (124.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business Administration"], ["duration_month", 36], ["created_at", "2022-12-16 14:46:58.234201"], ["updated_at", "2022-12-16 14:46:58.234201"]]
+  [1m[36mTRANSACTION (79.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BSC"], ["subject", "Science"], ["duration_month", 36], ["created_at", "2022-12-16 14:46:58.322347"], ["updated_at", "2022-12-16 14:46:58.322347"]]
+  [1m[36mTRANSACTION (128.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BTech."], ["subject", "Engineering"], ["duration_month", 48], ["created_at", "2022-12-16 14:46:58.459991"], ["updated_at", "2022-12-16 14:46:58.459991"]]
+  [1m[36mTRANSACTION (151.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "B.Farma"], ["subject", "Pharmacy"], ["duration_month", 48], ["created_at", "2022-12-16 14:46:58.619729"], ["updated_at", "2022-12-16 14:46:58.619729"]]
+  [1m[36mTRANSACTION (128.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.3ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Anthony"], ["course_id", 1], ["address", "Parliament Street"], ["mobile_no", 983812349], ["email", "anthony@gmail.com"], ["created_at", "2022-12-16 14:46:58.839655"], ["updated_at", "2022-12-16 14:46:58.839655"]]
+  [1m[36mTRANSACTION (138.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.7ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Bharat"], ["course_id", 2], ["address", "Parliament9 Street"], ["mobile_no", 983812348], ["email", "bharat@gmail.com"], ["created_at", "2022-12-16 14:46:58.990606"], ["updated_at", "2022-12-16 14:46:58.990606"]]
+  [1m[36mTRANSACTION (134.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.6ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Chetan"], ["course_id", 1], ["address", "Parliament2 Street"], ["mobile_no", 983812345], ["email", "chetan11@gmail.com"], ["created_at", "2022-12-16 14:46:59.139254"], ["updated_at", "2022-12-16 14:46:59.139254"]]
+  [1m[36mTRANSACTION (134.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 20:18:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 12.5ms | ActiveRecord: 0.6ms | Allocations: 21778)
+
+
+Started GET "/api/v1/Course/:1" for ::1 at 2022-12-16 20:18:27 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/Course/:1"):
+  
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 20:18:53 +0530
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1233)
+
+
+Started GET "/api/v1/tutors" for ::1 at 2022-12-16 20:19:02 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/tutors"):
+  
+Started GET "/api/v1/users" for ::1 at 2022-12-16 20:19:39 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+Started GET "/api/v1/tutors" for ::1 at 2022-12-16 20:19:51 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/tutors"):
+  
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 20:19:57 +0530
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1219)
+
+
+Started GET "/api/v1/courses/1/facts" for ::1 at 2022-12-16 20:20:05 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/courses/1/facts"):
+  
+Started GET "/api/v1/courses/1/Facts" for ::1 at 2022-12-16 20:20:13 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/courses/1/Facts"):
+  
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 20:20:38 +0530
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1219)
+
+
+Started GET "/api/v1/courses/1" for ::1 at 2022-12-16 20:20:59 +0530
+Processing by Api::V1::CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 4464)
+
+
+Started GET "/api/v1/courses/1/tutors" for ::1 at 2022-12-16 20:21:22 +0530
+Processing by Api::V1::TutorsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 0.9ms | Allocations: 18521)
+
+
+Started GET "/api/v1/courses/2/tutors" for ::1 at 2022-12-16 20:23:09 +0530
+Processing by Api::V1::TutorsController#index as HTML
+  Parameters: {"course_id"=>"2"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1041)
+
+
+Started GET "/api/v1/courses/2/tutors" for ::1 at 2022-12-16 20:23:23 +0530
+Processing by Api::V1::TutorsController#index as HTML
+  Parameters: {"course_id"=>"2"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1054)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 20:24:33 +0530
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1233)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 22:12:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 35ms (Views: 15.2ms | ActiveRecord: 0.8ms | Allocations: 21784)
+
+
+Started GET "/api/v1/courses/1/tutors" for ::1 at 2022-12-16 22:15:11 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"course_id"=>"1"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.6ms | Allocations: 18498)
+
+
+Started GET "/api/v1/courses/tutors" for ::1 at 2022-12-16 22:15:32 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"tutors"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 2518)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=tutors):
+  
+app/controllers/api/v1/courses_controller.rb:11:in `show'
+Started GET "/api/v1/courses/2/tutors" for ::1 at 2022-12-16 22:15:46 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"course_id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 1058)
+
+
+Started GET "/api/v1/courses/2" for ::1 at 2022-12-16 22:18:54 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 643)
+
+
+Started POST "/api/v1/courses/2?name=BBA1" for ::1 at 2022-12-16 22:19:32 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/courses/2"):
+  
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:25:24 +0530
+Processing by Api::V1::CoursesController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (Allocations: 445)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 22:25:33 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1368)
+
+
+Started GET "/api/v1/courses?duration_month=48" for ::1 at 2022-12-16 22:26:08 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"duration_month"=>"48"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1224)
+
+
+Started GET "/api/v1/courses?name=%22BCA%22" for ::1 at 2022-12-16 22:29:43 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"\"BCA\""}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1224)
+
+
+Started GET "/api/v1/courses/1" for ::1 at 2022-12-16 22:31:52 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 671)
+
+
+Started GET "/api/v1/courses/2" for ::1 at 2022-12-16 22:32:00 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 642)
+
+
+Started GET "/api/v1/courses/3" for ::1 at 2022-12-16 22:32:07 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 642)
+
+
+Started POST "/api/v1/courses/3" for ::1 at 2022-12-16 22:32:39 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/courses/3"):
+  
+Started GET "/api/v1/courses/3" for ::1 at 2022-12-16 22:32:55 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 641)
+
+
+Started POST "/api/v1/courses/3?name=bsc1" for ::1 at 2022-12-16 22:34:07 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/courses/3"):
+  
+Started GET "/api/v1/courses/3" for ::1 at 2022-12-16 22:34:29 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 641)
+
+
+Started PUT "/api/v1/courses/3?name=%22BSC1%22" for ::1 at 2022-12-16 22:35:04 +0530
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Api::V1::CoursesController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/courses/3?name=%22BSC1%22" for ::1 at 2022-12-16 22:38:23 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"\"BSC1\"", "id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 654)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:41:07 +0530
+Processing by Api::V1::CoursesController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 439)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 22:41:36 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1223)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 22:43:44 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1224)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:44:19 +0530
+Processing by Api::V1::CoursesController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 438)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:45:08 +0530
+Processing by Api::V1::CoursesController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 438)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:45:56 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 419)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:50:04 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+Completed 400 Bad Request in 2ms (Allocations: 1828)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:39:in `course_params'
+app/controllers/api/v1/courses_controller.rb:17:in `create'
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:57:57 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BSC11"], ["subject", "Science"], ["duration_month", 36], ["created_at", "2022-12-16 17:27:57.738752"], ["updated_at", "2022-12-16 17:27:57.738752"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (115.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+Completed 200 OK in 126ms (Views: 1.1ms | ActiveRecord: 115.6ms | Allocations: 5400)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:58:12 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BSC11"], ["subject", "Science"], ["duration_month", 36], ["created_at", "2022-12-16 17:28:12.800470"], ["updated_at", "2022-12-16 17:28:12.800470"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (95.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+Completed 200 OK in 103ms (Views: 1.2ms | ActiveRecord: 95.6ms | Allocations: 1869)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:58:24 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BSC11"], ["subject", "Science"], ["duration_month", 36], ["created_at", "2022-12-16 17:28:24.712698"], ["updated_at", "2022-12-16 17:28:24.712698"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (91.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+Completed 200 OK in 99ms (Views: 1.1ms | ActiveRecord: 91.8ms | Allocations: 1870)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-16 22:58:36 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1608)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-16 22:58:54 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BSC11"], ["subject", "Science"], ["duration_month", 36], ["created_at", "2022-12-16 17:28:54.831001"], ["updated_at", "2022-12-16 17:28:54.831001"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (169.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+Completed 200 OK in 175ms (Views: 1.2ms | ActiveRecord: 169.5ms | Allocations: 1869)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-17 17:49:08 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+Completed 400 Bad Request in 78ms (ActiveRecord: 0.0ms | Allocations: 5150)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:39:in `course_params'
+app/controllers/api/v1/courses_controller.rb:17:in `create'
+Started GET "/api/v1/courses" for ::1 at 2022-12-17 17:49:19 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 177ms (Views: 172.6ms | ActiveRecord: 2.3ms | Allocations: 17564)
+
+
+Started POST "/api/v1/courses?name=%22BSC2%22&subject=%22Science2%22&duration=12" for ::1 at 2022-12-17 17:51:26 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"\"BSC2\"", "subject"=>"\"Science2\"", "duration_month"=>"36", "duration"=>"12"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 496)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:39:in `course_params'
+app/controllers/api/v1/courses_controller.rb:17:in `create'
+Started POST "/api/v1/courses?name=%22BSC2%22&subject=%22Science2%22&duration=12" for ::1 at 2022-12-17 18:14:11 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"\"BSC2\"", "subject"=>"\"Science2\"", "duration_month"=>"36", "duration"=>"12"}
+Completed 400 Bad Request in 6ms (Allocations: 1826)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:43:in `course_params'
+app/controllers/api/v1/courses_controller.rb:21:in `create'
+Started POST "/api/v1/courses?name=%22BSC2%22&subject=%22Science2%22&duration=12" for ::1 at 2022-12-17 18:16:48 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"\"BSC2\"", "subject"=>"\"Science2\"", "duration_month"=>"36", "duration"=>"12"}
+[31mUnpermitted parameter: :duration. Context: { controller: Api::V1::CoursesController, action: create, request: #<ActionDispatch::Request:0x00007f04811a33f8>, params: {"name"=>"\"BSC2\"", "subject"=>"\"Science2\"", "duration_month"=>"36", "duration"=>"12", "controller"=>"api/v1/courses", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:22:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "\"BSC2\""], ["subject", "\"Science2\""], ["duration_month", 36], ["created_at", "2022-12-17 12:46:48.458522"], ["updated_at", "2022-12-17 12:46:48.458522"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (205.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:22:in `create'
+Completed 200 OK in 215ms (Views: 0.4ms | ActiveRecord: 205.7ms | Allocations: 5522)
+
+
+Started POST "/api/v1/courses?name=%22BSC2%22&subject=%22Science2%22&duration=12" for ::1 at 2022-12-17 18:19:35 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"\"BSC2\"", "subject"=>"\"Science2\"", "duration_month"=>"36", "duration"=>"12"}
+Completed 400 Bad Request in 2ms (Allocations: 1816)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:43:in `course_params'
+app/controllers/api/v1/courses_controller.rb:21:in `create'
+Started POST "/api/v1/courses?name=%22BSC2%22&subject=%22Science2%22&duration=12" for ::1 at 2022-12-17 18:19:54 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"\"BSC2\"", "subject"=>"\"Science2\"", "duration_month"=>"36", "duration"=>"12"}
+Completed 400 Bad Request in 0ms (Allocations: 494)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:43:in `course_params'
+app/controllers/api/v1/courses_controller.rb:21:in `create'
+Started POST "/api/v1/courses?course[:name]=%22BSC2%22&course[:subject]=%22Science2%22&course[:duration]=12" for ::1 at 2022-12-17 18:22:34 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{":name"=>"\"BSC2\"", ":subject"=>"\"Science2\"", ":duration"=>"12"}}
+[31mUnpermitted parameters: ::name, ::subject, ::duration. Context: { controller: Api::V1::CoursesController, action: create, request: #<ActionDispatch::Request:0x00007f0488238a78>, params: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{":name"=>"\"BSC2\"", ":subject"=>"\"Science2\"", ":duration"=>"12"}, "controller"=>"api/v1/courses", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:22:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", nil], ["subject", nil], ["duration_month", nil], ["created_at", "2022-12-17 12:52:34.074899"], ["updated_at", "2022-12-17 12:52:34.074899"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (248.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:22:in `create'
+Completed 200 OK in 258ms (Views: 0.8ms | ActiveRecord: 249.4ms | Allocations: 4381)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:04:30 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 183ms (Views: 53.3ms | ActiveRecord: 2.3ms | Allocations: 22423)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-18 13:06:13 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 479)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:39:in `course_params'
+app/controllers/api/v1/courses_controller.rb:17:in `create'
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:07:03 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1891)
+
+
+Started POST "/api/v1/courses?course[name]=%22bssa%22&course[subject]=%22cs%22&course[duration_month]=12" for ::1 at 2022-12-18 13:08:16 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"bssa\"", "subject"=>"\"cs\"", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "\"bssa\""], ["subject", "\"cs\""], ["duration_month", 12], ["created_at", "2022-12-18 07:38:16.317761"], ["updated_at", "2022-12-18 07:38:16.317761"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (83.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:18:in `create'
+Completed 200 OK in 88ms (Views: 0.3ms | ActiveRecord: 83.4ms | Allocations: 2657)
+
+
+Started GET "/api/v1/courses/12" for ::1 at 2022-12-18 13:10:07 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"12"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:11:in `show'
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 4418)
+
+
+Started PUT "/api/v1/courses/12?course[name]=%22BBBB%22" for ::1 at 2022-12-18 13:11:16 +0530
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Api::V1::CoursesController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started PUT "/api/v1/courses/12?course[name]=%22BBBB%22" for ::1 at 2022-12-18 13:20:33 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBB\""}, "id"=>"12"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"BBBB\""], ["updated_at", "2022-12-18 07:50:33.847094"], ["id", 12]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (83.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 98ms (Views: 0.6ms | ActiveRecord: 84.1ms | Allocations: 5841)
+
+
+Started GET "/api/v1/courses/12?course[name]=%22BBBB%22" for ::1 at 2022-12-18 13:22:01 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBB\""}, "id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 4392)
+
+
+Started DELETE "/api/v1/courses/12?course[name]=%22BBBB%22" for ::1 at 2022-12-18 13:22:27 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBB\""}, "id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mCourse Destroy (0.2ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (92.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+Completed 200 OK in 99ms (Views: 0.5ms | ActiveRecord: 92.8ms | Allocations: 1905)
+
+
+Started GET "/api/v1/courses/12?course[name]=%22BBBB%22" for ::1 at 2022-12-18 13:23:04 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBB\""}, "id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 871)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=12):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses/11" for ::1 at 2022-12-18 13:23:22 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 622)
+
+
+Started PUT "/api/v1/courses/11?course[name]=%22ppa%22" for ::1 at 2022-12-18 13:25:51 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppa\""}, "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.3ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"ppa\""], ["updated_at", "2022-12-18 07:55:51.245106"], ["id", 11]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (468.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 476ms (Views: 0.5ms | ActiveRecord: 468.7ms | Allocations: 2371)
+
+
+Started PATCH "/api/v1/courses/11?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:26:16 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"ppas\""], ["updated_at", "2022-12-18 07:56:16.667284"], ["id", 11]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (95.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 102ms (Views: 0.7ms | ActiveRecord: 96.3ms | Allocations: 2293)
+
+
+Started PUT "/api/v1/courses/111?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:33:56 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"111"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 1015)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=111):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started PUT "/api/v1/courses/111?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:34:02 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"111"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=111):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started PUT "/api/v1/courses/111?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:34:03 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"111"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=111):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started PUT "/api/v1/courses/11?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:34:23 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 746)
+
+
+Started PUT "/api/v1/courses/11?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:34:26 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 747)
+
+
+Started PUT "/api/v1/courses/11?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:34:28 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 749)
+
+
+Started DELETE "/api/v1/courses/11?course[name]=%22ppas%22" for ::1 at 2022-12-18 13:41:36 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"ppas\""}, "id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mCourse Destroy (0.2ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (132.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+Completed 200 OK in 139ms (Views: 0.6ms | ActiveRecord: 133.2ms | Allocations: 2028)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:44:03 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1806)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:44:52 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:9:in `index'
+Completed 200 OK in 38ms (Views: 28.2ms | ActiveRecord: 4.8ms | Allocations: 5093)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:45:58 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 500 Internal Server Error in 11ms (Views: 7.5ms | ActiveRecord: 1.0ms | Allocations: 5434)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/courses_controller.rb:9:in `index'
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:47:29 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 1.1ms | Allocations: 5041)
+
+
+Started POST "/api/v1/courses/1" for ::1 at 2022-12-18 13:48:49 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/courses/1"):
+  
+Started POST "/api/v1/course/1" for ::1 at 2022-12-18 13:49:42 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/course/1"):
+  
+Started POST "/api/v1/course/:1" for ::1 at 2022-12-18 13:49:51 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/course/:1"):
+  
+Started POST "/api/v1/course/2" for ::1 at 2022-12-18 13:50:08 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/course/2"):
+  
+Started GET "/api/v1/course/2" for ::1 at 2022-12-18 13:50:15 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/course/2"):
+  
+Started GET "/api/v1/courses/2" for ::1 at 2022-12-18 13:50:27 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"2"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1207)
+
+
+Started POST "/api/v1/courses" for ::1 at 2022-12-18 13:51:09 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 491)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:49:in `course_params'
+app/controllers/api/v1/courses_controller.rb:19:in `create'
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:51:23 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 1776)
+
+
+Started POST "/api/v1/courses?name=BBBS" for ::1 at 2022-12-18 13:51:48 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BBBS", "subject"=>"Science", "duration_month"=>"36"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 491)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:49:in `course_params'
+app/controllers/api/v1/courses_controller.rb:19:in `create'
+Started POST "/api/v1/courses?course[name]=%22BBBS%22" for ::1 at 2022-12-18 13:52:15 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBS\""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "\"BBBS\""], ["subject", nil], ["duration_month", nil], ["created_at", "2022-12-18 08:22:15.386784"], ["updated_at", "2022-12-18 08:22:15.386784"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (93.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 200 OK in 102ms (Views: 0.9ms | ActiveRecord: 94.1ms | Allocations: 2459)
+
+
+Started PUT "/api/v1/courses/2?course[name]=%22BBBSs%22" for ::1 at 2022-12-18 13:53:23 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBSs\""}, "id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"BBBSs\""], ["updated_at", "2022-12-18 08:23:23.061361"], ["id", 2]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (98.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 106ms (Views: 0.7ms | ActiveRecord: 98.6ms | Allocations: 2315)
+
+
+Started GET "/api/v1/courses/2?course[name]=%22BBBSs%22" for ::1 at 2022-12-18 13:53:39 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBSs\""}, "id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 635)
+
+
+Started PATCH "/api/v1/courses/2?course[name]=%22BBBSs%22" for ::1 at 2022-12-18 13:53:57 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBSs\""}, "id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 747)
+
+
+Started DELETE "/api/v1/courses/2?course[name]=%22BBBSs%22" for ::1 at 2022-12-18 13:54:06 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course"=>{"name"=>"\"BBBSs\""}, "id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mCourse Destroy (0.3ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (86.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+Completed 200 OK in 95ms (Views: 0.6ms | ActiveRecord: 87.4ms | Allocations: 1888)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:54:20 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1771)
+
+
+Started GET "/api/v1/courses/12" for ::1 at 2022-12-18 13:55:12 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 871)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=12):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses/11" for ::1 at 2022-12-18 13:55:26 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"11"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=11):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 13:55:39 +0530
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 1770)
+
+
+Started GET "/api/v1/courses/13" for ::1 at 2022-12-18 13:56:02 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"13"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 629)
+
+
+Started GET "/api/v1/courses/133" for ::1 at 2022-12-18 13:56:14 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"133"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 133], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 871)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=133):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started DELETE "/api/v1/courses/133" for ::1 at 2022-12-18 13:56:27 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"133"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 133], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=133):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses/1" for ::1 at 2022-12-18 13:57:06 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 635)
+
+
+Started GET "/api/v1/courses/1/tutors" for ::1 at 2022-12-18 13:57:16 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course_id"=>"1"}
+  [1m[36mTutor Load (0.7ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 88ms (Views: 26.8ms | ActiveRecord: 2.1ms | Allocations: 18503)
+
+
+Started GET "/api/v1/courses/2/tutors" for ::1 at 2022-12-18 13:57:38 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course_id"=>"2"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1033)
+
+
+Started GET "/api/v1/courses/2/tutors/1" for ::1 at 2022-12-18 13:57:57 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course_id"=>"2", "id"=>"1"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+No template found for Api::V1::TutorsController#show, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms | Allocations: 1329)
+
+
+Started GET "/api/v1/courses/2/tutors/" for ::1 at 2022-12-18 13:58:40 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "course_id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1033)
+
+
+Started GET "/api/v1/tutors" for ::1 at 2022-12-18 14:05:16 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 4390)
+
+
+Started GET "/api/v1/tutors/1" for ::1 at 2022-12-18 14:05:30 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"1"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+No template found for Api::V1::TutorsController#show, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms | Allocations: 1148)
+
+
+Started GET "/api/v1/tutors" for ::1 at 2022-12-18 14:08:43 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1033)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22alizabath%22&tutor[course_id]=1" for ::1 at 2022-12-18 14:11:45 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"alizabath\"", "course_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTutor Create (0.3ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"alizabath\""], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-18 08:41:45.071156"], ["updated_at", "2022-12-18 08:41:45.071156"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (143.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 200 OK in 194ms (Views: 1.0ms | ActiveRecord: 144.0ms | Allocations: 11305)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22alizabath%22&tutor[course_id]=" for ::1 at 2022-12-18 14:12:30 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"alizabath\"", "course_id"=>""}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2211)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:18:in `create'
+Started POST "/api/v1/tutors?tutor[full_name]=%22alizabath%22&tutor[course_id]=2" for ::1 at 2022-12-18 14:13:06 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"alizabath\"", "course_id"=>"2"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 3475)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:18:in `create'
+Started POST "/api/v1/tutors?tutor[full_name]=%22alizabath%22&tutor[course_id]=2" for ::1 at 2022-12-18 14:13:22 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"alizabath\"", "course_id"=>"2"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 3473)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:18:in `create'
+Started POST "/api/v1/tutors?tutor[full_name]=%22alizabath%22&tutor[course_id]=1" for ::1 at 2022-12-18 14:13:49 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"alizabath\"", "course_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTutor Create (0.3ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"alizabath\""], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-18 08:43:49.110544"], ["updated_at", "2022-12-18 08:43:49.110544"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (95.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 200 OK in 104ms (Views: 1.0ms | ActiveRecord: 96.3ms | Allocations: 2708)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22SagartSir%22&tutor[course_id]=1" for ::1 at 2022-12-18 14:14:21 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"SagartSir\"", "course_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTutor Create (0.2ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"SagartSir\""], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-18 08:44:21.653897"], ["updated_at", "2022-12-18 08:44:21.653897"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (75.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 200 OK in 84ms (Views: 0.8ms | ActiveRecord: 75.8ms | Allocations: 2711)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22SagartSir%22&tutor[course_id]=1" for ::1 at 2022-12-18 14:14:25 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"SagartSir\"", "course_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTutor Create (0.3ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"SagartSir\""], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-18 08:44:25.255327"], ["updated_at", "2022-12-18 08:44:25.255327"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (86.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 200 OK in 97ms (Views: 1.4ms | ActiveRecord: 87.3ms | Allocations: 2711)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22SagartSir%22&tutor[course_id]=2" for ::1 at 2022-12-18 14:14:39 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"SagartSir\"", "course_id"=>"2"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 3476)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:18:in `create'
+Started GET "/api/v1/courses" for ::1 at 2022-12-18 14:15:46 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 1850)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22SagartSir%22&tutor[course_id]=3" for ::1 at 2022-12-18 14:16:02 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"SagartSir\"", "course_id"=>"3"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTutor Create (0.3ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"SagartSir\""], ["course_id", 3], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-18 08:46:02.559729"], ["updated_at", "2022-12-18 08:46:02.559729"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (100.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:15:in `create'
+Completed 200 OK in 109ms (Views: 0.9ms | ActiveRecord: 101.0ms | Allocations: 2710)
+
+
+Started POST "/api/v1/tutors/3" for ::1 at 2022-12-18 14:16:52 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/tutors/3"):
+  
+Started POST "/api/v1/tutors/2" for ::1 at 2022-12-18 14:16:58 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/tutors/2"):
+  
+Started POST "/api/v1/tutors/1" for ::1 at 2022-12-18 14:17:03 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/tutors/1"):
+  
+Started PUT "/api/v1/tutors/1?totor[name]=%22aaa%22" for ::1 at 2022-12-18 14:20:19 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "totor"=>{"name"=>"\"aaa\""}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms | Allocations: 939)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tutor
+Did you mean?  totor):
+  
+app/controllers/api/v1/tutors_controller.rb:43:in `tutor_params'
+app/controllers/api/v1/tutors_controller.rb:24:in `update'
+Started PUT "/api/v1/tutors/1?tutor[name]=%22aaa%22" for ::1 at 2022-12-18 14:24:50 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"name"=>"\"aaa\""}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+[31mUnpermitted parameter: :name. Context: { controller: Api::V1::TutorsController, action: update, request: #<ActionDispatch::Request:0x00007f3560a872c0>, params: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"name"=>"\"aaa\""}, "controller"=>"api/v1/tutors", "action"=>"update", "id"=>"1"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2612)
+
+
+Started PUT "/api/v1/tutors/1?tutor[full_name]=%22aaa%22" for ::1 at 2022-12-18 14:25:52 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"aaa\""}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mTutor Update (0.3ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "\"aaa\""], ["updated_at", "2022-12-18 08:55:52.514901"], ["id", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (94.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+Completed 200 OK in 105ms (Views: 0.5ms | ActiveRecord: 94.9ms | Allocations: 3144)
+
+
+Started PATCH "/api/v1/tutors/1?tutor[full_name]=%22aaad%22" for ::1 at 2022-12-18 14:26:25 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"aaad\""}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mTutor Update (0.2ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "\"aaad\""], ["updated_at", "2022-12-18 08:56:25.400451"], ["id", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (86.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:24:in `update'
+Completed 200 OK in 94ms (Views: 0.6ms | ActiveRecord: 86.7ms | Allocations: 3144)
+
+
+Started GET "/api/v1/tutors/2?tutor[full_name]=%22aaad%22" for ::1 at 2022-12-18 14:26:54 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"aaad\""}, "id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+No template found for Api::V1::TutorsController#show, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms | Allocations: 568)
+
+
+Started GET "/api/v1/tutors/2?tutor[full_name]=%22aaad%22" for ::1 at 2022-12-18 14:28:00 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"aaad\""}, "id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:49:in `find_tutor'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 4992)
+
+
+Started POST "/api/v1/tutors" for ::1 at 2022-12-18 14:28:38 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 491)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tutor):
+  
+app/controllers/api/v1/tutors_controller.rb:45:in `tutor_params'
+app/controllers/api/v1/tutors_controller.rb:16:in `create'
+Started GET "/api/v1/tutors" for ::1 at 2022-12-18 14:29:02 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1655)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22Chirag%22" for ::1 at 2022-12-18 14:29:54 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"Chirag\""}}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 6508)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:20:in `create'
+Started POST "/api/v1/tutors?tutor[full_name]=Chirag" for ::1 at 2022-12-18 14:31:01 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"Chirag"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1716)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:20:in `create'
+Started POST "/api/v1/tutors?tutor[full_name]=Chirag&tutor[course_id]=1" for ::1 at 2022-12-18 14:32:07 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"Chirag", "course_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTutor Create (0.3ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Chirag"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-18 09:02:07.448938"], ["updated_at", "2022-12-18 09:02:07.448938"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (96.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 200 OK in 110ms (Views: 1.0ms | ActiveRecord: 97.9ms | Allocations: 5266)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=Chirag&tutor[course_id]=3" for ::1 at 2022-12-18 14:33:02 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"Chirag", "course_id"=>"3"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTutor Create (0.2ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Chirag"], ["course_id", 3], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-18 09:03:02.367081"], ["updated_at", "2022-12-18 09:03:02.367081"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (91.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 200 OK in 96ms (Views: 0.5ms | ActiveRecord: 91.4ms | Allocations: 2709)
+
+
+Started PUT "/api/v1/tutors?tutor[full_name]=Chiragdd&tutor[course_id]=3" for ::1 at 2022-12-18 14:33:35 +0530
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/tutors"):
+  
+Started PUT "/api/v1/tutors/2?tutor[full_name]=%22harsh%22" for ::1 at 2022-12-18 14:34:27 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"harsh\""}, "id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:49:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3233)
+
+
+Started PATCH "/api/v1/tutors/2?tutor[full_name]=%22harsh%22dd" for ::1 at 2022-12-18 14:35:11 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"harsh\"dd"}, "id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:49:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 3233)
+
+
+Started PATCH "/api/v1/tutors/2?tutor[full_name]=%22harsh%22dd" for ::1 at 2022-12-18 14:36:23 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"harsh\"dd"}, "id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:49:in `find_tutor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:26:in `update'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 10423)
+
+
+Started DELETE "/api/v1/tutors/2" for ::1 at 2022-12-18 14:38:31 +0530
+Processing by Api::V1::TutorsController#destroy as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "id"=>"2"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:49:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:35:in `destroy'
+  [1m[36mTutor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tutors" WHERE "tutors"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (77.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:35:in `destroy'
+Completed 200 OK in 82ms (Views: 0.5ms | ActiveRecord: 77.7ms | Allocations: 1888)
+
+
+Started GET "/api/v1/tutors" for ::1 at 2022-12-18 14:38:44 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1768)
+
+
+Started GET "/" for ::1 at 2022-12-18 23:58:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 773)
+Completed 200 OK in 17ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 6830)
+
+
+Started GET "/" for ::1 at 2022-12-18 23:58:10 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 450)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1177)
+
+
+Started GET "/" for ::1 at 2022-12-18 23:58:12 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 16)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 218)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-19 00:24:16 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 12.4ms | ActiveRecord: 0.7ms | Allocations: 22385)
+
+
+Started POST "/api/v1/courses?course[:name]=&course[:subject]=%22science%22" for ::1 at 2022-12-19 00:27:18 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{":name"=>"", ":subject"=>"\"science\""}}
+[31mUnpermitted parameters: ::name, ::subject. Context: { controller: Api::V1::CoursesController, action: create, request: #<ActionDispatch::Request:0x00007fc5bcd4a768>, params: {"course"=>{":name"=>"", ":subject"=>"\"science\""}, "controller"=>"api/v1/courses", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 4163)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/courses/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/promobi_assignment/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/application
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/mailer):
+  
+app/controllers/api/v1/courses_controller.rb:23:in `create'
+Started POST "/api/v1/courses?course[:name]=&course[:subject]=%22science%22" for ::1 at 2022-12-19 00:28:13 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{":name"=>"", ":subject"=>"\"science\""}}
+[31mUnpermitted parameters: ::name, ::subject. Context: { controller: Api::V1::CoursesController, action: create, request: #<ActionDispatch::Request:0x00007fc5c8c35f60>, params: {"course"=>{":name"=>"", ":subject"=>"\"science\""}, "controller"=>"api/v1/courses", "action"=>"create"} }[0m
+Completed 400 Bad Request in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 4076)
+
+
+Started GET "/api/v1/courses/1" for ::1 at 2022-12-19 01:09:43 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 4652)
+
+
+Started PUT "/api/v1/courses/1?course[name]=%22BBca%22" for ::1 at 2022-12-19 01:10:19 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"BBca\""}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.3ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"BBca\""], ["updated_at", "2022-12-18 19:40:19.499926"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (104.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 113ms (Views: 0.5ms | ActiveRecord: 105.4ms | Allocations: 2979)
+
+
