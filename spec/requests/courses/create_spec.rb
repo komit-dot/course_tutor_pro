@@ -12,13 +12,10 @@ RSpec.describe "Courses", type: :request do
 			}
 
 			expect(response.status).to eq(200)
-
 			json = JSON.parse(response.body).deep_symbolize_keys
-
 			expect(json[:name]).to eq('BCA')
 			expect(json[:subject]).to eq('Computer')
 			expect(json[:duration_month]).to eq(12)
-
 			expect(Course.count).to eq(1)
 			expect(Course.last.subject).to eq('Computer')
 		end 

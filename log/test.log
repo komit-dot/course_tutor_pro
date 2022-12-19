@@ -342,3 +342,319 @@ Processing by Api::V1::CoursesController#update as HTML
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-18 20:13:20.916593"], ["updated_at", "2022-12-18 20:13:20.916593"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 01:43:20 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-18 20:13:20.964295"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3416)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-18 20:14:43.533139"], ["updated_at", "2022-12-18 20:14:43.533139"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 01:44:43 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-18 20:14:43.580483"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-18 20:15:01.257147"], ["updated_at", "2022-12-18 20:15:01.257147"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 01:45:01 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-18 20:15:01.304633"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-18 20:19:59.434861"], ["updated_at", "2022-12-18 20:19:59.434861"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 01:49:59 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-18 20:19:59.480798"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (27.6ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 05:08:40.976639"], ["updated_at", "2022-12-19 05:08:40.976639"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 10:38:41 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 05:08:41.396331"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3416)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 10:05:43.381122"], ["updated_at", "2022-12-19 10:05:43.381122"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 15:35:43 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 10:05:43.427885"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 15:59:41 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"BCA", "subject"=>"Computer", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer"], ["duration_month", 12], ["created_at", "2022-12-19 10:29:41.801639"], ["updated_at", "2022-12-19 10:29:41.801639"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 21342)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 15:59:41 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Computer"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 380)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 10:31:50.041874"], ["updated_at", "2022-12-19 10:31:50.041874"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 16:01:50 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 10:31:50.088133"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 10:32:43.453526"], ["updated_at", "2022-12-19 10:32:43.453526"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 16:02:43 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 10:32:43.499317"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 10:36:56.505527"], ["updated_at", "2022-12-19 10:36:56.505527"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 16:06:56 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 10:36:56.552492"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 11:30:23.518394"], ["updated_at", "2022-12-19 11:30:23.518394"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 17:00:23 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 11:30:23.565959"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 11:38:04.751480"], ["updated_at", "2022-12-19 11:38:04.751480"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 17:08:04 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 11:38:04.815517"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 11:38:27.991479"], ["updated_at", "2022-12-19 11:38:27.991479"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 17:08:27 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 11:38:28.039447"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 11:39:00.488883"], ["updated_at", "2022-12-19 11:39:00.488883"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 17:09:00 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 11:39:00.537560"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3417)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 17:09:21 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"BCA", "subject"=>"Computer", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer"], ["duration_month", 12], ["created_at", "2022-12-19 11:39:21.313360"], ["updated_at", "2022-12-19 11:39:21.313360"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 21342)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 17:09:21 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Computer"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 380)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 11:39:21.322165"], ["updated_at", "2022-12-19 11:39:21.322165"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 17:09:21 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 11:39:21.325339"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 872)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 18:14:34 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"BCA", "subject"=>"Computer", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer"], ["duration_month", 12], ["created_at", "2022-12-19 12:44:34.921786"], ["updated_at", "2022-12-19 12:44:34.921786"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 21342)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 18:14:34 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Computer"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 380)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 12:44:34.930261"], ["updated_at", "2022-12-19 12:44:34.930261"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 18:14:34 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 12:44:34.933452"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 872)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 18:15:42 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"BCA", "subject"=>"Computer", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer"], ["duration_month", 12], ["created_at", "2022-12-19 12:45:42.569936"], ["updated_at", "2022-12-19 12:45:42.569936"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 21342)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-19 18:15:42 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Computer"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 380)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-19 12:45:42.578910"], ["updated_at", "2022-12-19 12:45:42.578910"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-19 18:15:42 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-19 12:45:42.582319"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 872)
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m

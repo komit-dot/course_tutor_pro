@@ -2041,3 +2041,21 @@ Processing by Api::V1::CoursesController#update as */*
 Completed 200 OK in 113ms (Views: 0.5ms | ActiveRecord: 105.4ms | Allocations: 2979)
 
 
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-18 20:19:11.008200"], ["updated_at", "2022-12-18 20:19:11.008200"]]
+  [1m[36mTRANSACTION (65.2ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/api/v1/courses/1?course[name]=%22BBcaa%22" for ::1 at 2022-12-19 16:05:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"BBcaa\""}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"BBcaa\""], ["updated_at", "2022-12-19 10:35:59.165606"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (70.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 94ms (Views: 0.9ms | ActiveRecord: 71.4ms | Allocations: 25266)
+
+

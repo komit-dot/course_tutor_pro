@@ -12,13 +12,9 @@ RSpec.describe 'Courses', type: :request do
 			}
 			expect(response.status).to eq(200)
 			json = JSON.parse(response.body).deep_symbolize_keys
-			expect(json[:name]).to eq('BBA2')
-			expect(json[:subject]).to eq('Business2')
-
+			expect(json[:message]).to eq('Course has been updated successfully.')
 			expect(course.reload.name).to eq('BBA2')
 			expect(course.reload.subject).to eq('Business2')
 		end 
-
-
 	end 
 end 

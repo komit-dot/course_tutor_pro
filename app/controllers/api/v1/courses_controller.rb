@@ -27,7 +27,7 @@ class Api::V1::CoursesController < ApplicationController
 	def update
 		if @course 
 			@course.update(course_params)
-			render json: { message: "Course has beer updated successfully."}, status: 200 
+			render json: { message: "Course has been updated successfully."}, status: 200 
 		else
 			render json: { message: "Unable to update the Course"}, status: 400
 		end 
