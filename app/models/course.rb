@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
+	validates :name, presence: true
 	has_many :tutors
-	validates :name, presence: true, allow_blank: false
 
 end

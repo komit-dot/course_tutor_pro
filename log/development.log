@@ -2059,3 +2059,515 @@ Processing by Api::V1::CoursesController#update as */*
 Completed 200 OK in 94ms (Views: 0.9ms | ActiveRecord: 71.4ms | Allocations: 25266)
 
 
+Started PUT "/api/v1/courses/1?course[name]=%22%22" for ::1 at 2022-12-19 18:31:39 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"\""}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.3ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"\""], ["updated_at", "2022-12-19 13:01:39.394308"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (78.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 102ms (Views: 0.8ms | ActiveRecord: 79.2ms | Allocations: 25264)
+
+
+Started PUT "/api/v1/courses/1?course[name]=%22%20%22" for ::1 at 2022-12-19 18:33:31 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\" \""}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\" \""], ["updated_at", "2022-12-19 13:03:31.689851"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (60.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 65ms (Views: 0.3ms | ActiveRecord: 61.1ms | Allocations: 2317)
+
+
+Started POST "/api/v1/courses/1?course[name]=%22%20%22" for ::1 at 2022-12-19 18:34:47 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/courses/1"):
+  
+Started POST "/api/v1/courses/1?course[name]=%22%22" for ::1 at 2022-12-19 18:35:11 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/courses/1"):
+  
+Started POST "/api/v1/courses/?course[name]=%22%22" for ::1 at 2022-12-19 18:35:58 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"name"=>"\"\""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "\"\""], ["subject", nil], ["duration_month", nil], ["created_at", "2022-12-19 13:05:58.312297"], ["updated_at", "2022-12-19 13:05:58.312297"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (71.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 200 OK in 78ms (Views: 0.9ms | ActiveRecord: 71.4ms | Allocations: 2483)
+
+
+Started POST "/api/v1/courses/?course[name]=%22%20%22" for ::1 at 2022-12-19 18:40:19 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"name"=>"\" \""}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "\" \""], ["subject", nil], ["duration_month", nil], ["created_at", "2022-12-19 13:10:19.333130"], ["updated_at", "2022-12-19 13:10:19.333130"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (62.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 200 OK in 66ms (Views: 0.5ms | ActiveRecord: 62.3ms | Allocations: 1860)
+
+
+Started GET "/api/v1/courses/" for ::1 at 2022-12-19 18:42:20 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.6ms | Allocations: 2132)
+
+
+Started POST "/api/v1/courses/?course[name]=%22%22" for ::1 at 2022-12-19 18:42:54 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"name"=>"\"\""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "\"\""], ["subject", nil], ["duration_month", nil], ["created_at", "2022-12-19 13:12:54.155635"], ["updated_at", "2022-12-19 13:12:54.155635"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (645.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 200 OK in 653ms (Views: 0.8ms | ActiveRecord: 645.5ms | Allocations: 1880)
+
+
+Started POST "/api/v1/courses/?course[name]=" for ::1 at 2022-12-19 18:43:11 +0530
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"name"=>""}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 692)
+
+
+Started GET "/api/v1/courses/1" for ::1 at 2022-12-19 18:44:12 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 637)
+
+
+Started PUT "/api/v1/courses/1?course[name]" for ::1 at 2022-12-19 18:44:37 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>nil}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1428)
+
+
+Started PUT "/api/v1/courses/1?course[name]=%22%22" for ::1 at 2022-12-19 18:45:00 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"\""}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"\""], ["updated_at", "2022-12-19 13:15:00.908735"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (72.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 80ms (Views: 0.7ms | ActiveRecord: 72.8ms | Allocations: 2301)
+
+
+Started PUT "/api/v1/courses/140?course[name]=%22%22" for ::1 at 2022-12-19 18:46:36 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"\""}, "id"=>"140"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 886)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=140):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started PUT "/api/v1/courses/140?course[name]=" for ::1 at 2022-12-19 18:47:31 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>""}, "id"=>"140"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 872)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=140):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started PUT "/api/v1/courses/1course[name]=" for ::1 at 2022-12-19 18:47:41 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"id"=>"1course[name]="}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.1ms | Allocations: 913)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:49:in `course_params'
+app/controllers/api/v1/courses_controller.rb:29:in `update'
+Started PUT "/api/v1/courses/1course[name]=?course[name]" for ::1 at 2022-12-19 18:47:59 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>nil}, "id"=>"1course[name]="}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1429)
+
+
+  [1m[36mTutor Load (0.4ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" ORDER BY "tutors"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "jonh"], ["subject", nil], ["duration_month", nil], ["created_at", "2022-12-19 13:34:25.482639"], ["updated_at", "2022-12-19 13:34:25.482639"]]
+  [1m[36mTRANSACTION (284.5ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/api/v1/courses/1course[name]=?course[name]=%27%20%27" for ::1 at 2022-12-19 19:17:18 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"' '"}, "id"=>"1course[name]="}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.4ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "' '"], ["updated_at", "2022-12-19 13:47:18.946438"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (70.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 93ms (Views: 0.3ms | ActiveRecord: 71.5ms | Allocations: 5835)
+
+
+Started PUT "/api/v1/courses/1course[name]=?course[duration_month]=23" for ::1 at 2022-12-19 19:17:49 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"duration_month"=>"23"}, "id"=>"1course[name]="}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["duration_month", 23], ["updated_at", "2022-12-19 13:47:49.251667"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (68.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 74ms (Views: 0.2ms | ActiveRecord: 69.1ms | Allocations: 2297)
+
+
+Started PUT "/api/v1/courses/1course[name]=?course[duration_month]=23" for ::1 at 2022-12-19 19:31:45 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"duration_month"=>"23"}, "id"=>"1course[name]="}
+Completed 400 Bad Request in 0ms (Views: 0.1ms | Allocations: 161)
+
+
+Started PUT "/api/v1/courses/1course[name]=?course[name]=%22BB%22" for ::1 at 2022-12-19 19:32:27 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"BB\""}, "id"=>"1course[name]="}
+Completed 400 Bad Request in 0ms (Views: 0.1ms | Allocations: 112)
+
+
+Started PUT "/api/v1/courses/1course[name]=?course[name]=%22BB%22" for ::1 at 2022-12-19 19:33:44 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"BB\""}, "id"=>"1course[name]="}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"BB\""], ["updated_at", "2022-12-19 14:03:44.404899"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (794.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 805ms (Views: 0.4ms | ActiveRecord: 794.7ms | Allocations: 5792)
+
+
+Started PUT "/api/v1/courses/1course[name]=?course[name]=" for ::1 at 2022-12-19 19:33:57 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>""}, "id"=>"1course[name]="}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1431)
+
+
+Started PUT "/api/v1/courses/1course[name]=?[name]=" for ::1 at 2022-12-19 19:34:11 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"name"=>"", "id"=>"1course[name]="}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms | Allocations: 918)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:49:in `course_params'
+app/controllers/api/v1/courses_controller.rb:29:in `update'
+Started PUT "/api/v1/courses/1course[name]=?course[duration_month]=%2233%22" for ::1 at 2022-12-19 19:34:57 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"duration_month"=>"\"33\""}, "id"=>"1course[name]="}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["duration_month", 0], ["updated_at", "2022-12-19 14:04:57.110017"], ["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (66.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 73ms (Views: 0.3ms | ActiveRecord: 67.1ms | Allocations: 2294)
+
+
+Started DELETE "/api/v1/courses/1" for ::1 at 2022-12-19 19:48:54 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mCourse Destroy (0.2ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (710.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+Completed 200 OK in 730ms (Views: 0.5ms | ActiveRecord: 710.9ms | Allocations: 2046)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-19 20:36:04 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 2347)
+
+
+Started GET "/api/v1/course" for ::1 at 2022-12-19 20:36:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/course"):
+  
+Started GET "/api/v1/course" for ::1 at 2022-12-19 20:41:28 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/course"):
+  
+Started GET "/api/v1/tutors" for ::1 at 2022-12-19 20:54:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTutor Load (25.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 117ms (Views: 14.6ms | ActiveRecord: 26.2ms | Allocations: 23594)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-19 20:55:07 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.6ms | Allocations: 18388)
+
+
+Started GET "/api/v1/courses/1" for ::1 at 2022-12-19 23:01:16 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 13ms (ActiveRecord: 0.6ms | Allocations: 7910)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=1):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses/2" for ::1 at 2022-12-19 23:01:33 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 884)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=2):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses/3" for ::1 at 2022-12-19 23:01:48 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 18270)
+
+
+Started DELETE "/api/v1/courses/3" for ::1 at 2022-12-19 23:02:05 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mCourse Destroy (0.2ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (72.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:39:in `destroy'
+Completed 200 OK in 78ms (Views: 0.5ms | ActiveRecord: 72.6ms | Allocations: 1951)
+
+
+Started GET "/api/v1/courses/4" for ::1 at 2022-12-19 23:02:38 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 635)
+
+
+Started GET "/api/v1/courses/11" for ::1 at 2022-12-19 23:03:48 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 885)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=11):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses/12" for ::1 at 2022-12-19 23:03:59 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=12):
+  
+app/controllers/api/v1/courses_controller.rb:53:in `find_course'
+Started GET "/api/v1/courses" for ::1 at 2022-12-19 23:04:09 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 2120)
+
+
+Started GET "/api/v1/courses" for ::1 at 2022-12-19 23:21:12 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 5038)
+
+
+Started GET "/api/v1/courses/16" for ::1 at 2022-12-19 23:21:26 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1426)
+
+
+Started PUT "/api/v1/courses/166" for ::1 at 2022-12-19 23:21:45 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"id"=>"166"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 166], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms | Allocations: 915)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: course):
+  
+app/controllers/api/v1/courses_controller.rb:47:in `course_params'
+app/controllers/api/v1/courses_controller.rb:28:in `update'
+Started PUT "/api/v1/courses/166?course[name]=%22%20%20%22" for ::1 at 2022-12-19 23:22:33 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"  \""}, "id"=>"166"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 166], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1417)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/api/v1/courses_controller.rb:28:in `update'
+Started PUT "/api/v1/courses/16?course[name]=%22%20%20%22" for ::1 at 2022-12-19 23:23:03 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"  \""}, "id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:28:in `update'
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"  \""], ["updated_at", "2022-12-19 17:53:03.016206"], ["id", 16]]
+  ↳ app/controllers/api/v1/courses_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (93.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:28:in `update'
+Completed 200 OK in 99ms (Views: 0.5ms | ActiveRecord: 93.3ms | Allocations: 3023)
+
+
+Started PUT "/api/v1/courses/16?course[name]=%22%22" for ::1 at 2022-12-19 23:24:18 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>"\"\""}, "id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:28:in `update'
+  [1m[36mCourse Update (0.3ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "\"\""], ["updated_at", "2022-12-19 17:54:18.738769"], ["id", 16]]
+  ↳ app/controllers/api/v1/courses_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (91.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:28:in `update'
+Completed 200 OK in 98ms (Views: 0.5ms | ActiveRecord: 91.5ms | Allocations: 2311)
+
+
+Started PUT "/api/v1/courses/16?course[name]=" for ::1 at 2022-12-19 23:24:33 +0530
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"name"=>""}, "id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1444)
+
+
+Started DELETE "/api/v1/courses/16" for ::1 at 2022-12-19 23:29:49 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `destroy'
+  [1m[36mCourse Destroy (0.2ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (135.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `destroy'
+Completed 200 OK in 140ms (Views: 0.4ms | ActiveRecord: 135.7ms | Allocations: 1899)
+
+
+Started DELETE "/api/v1/courses/166" for ::1 at 2022-12-19 23:30:00 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"id"=>"166"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 166], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1368)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/courses_controller.rb:37:in `destroy'
+Started DELETE "/api/v1/courses/16?course[name]" for ::1 at 2022-12-19 23:31:21 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"course"=>{"name"=>nil}, "id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 1369)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/courses_controller.rb:37:in `destroy'
+Started DELETE "/api/v1/courses/16" for ::1 at 2022-12-19 23:31:54 +0530
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:51:in `find_course'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1366)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/courses_controller.rb:37:in `destroy'

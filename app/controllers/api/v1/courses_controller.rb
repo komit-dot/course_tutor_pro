@@ -25,8 +25,7 @@ class Api::V1::CoursesController < ApplicationController
 	end
 #PUT /course/:id to update the particular course
 	def update
-		if @course 
-			@course.update(course_params)
+		if @course.update(course_params)
 			render json: { message: "Course has been updated successfully."}, status: 200 
 		else
 			render json: { message: "Unable to update the Course"}, status: 400
@@ -35,12 +34,8 @@ class Api::V1::CoursesController < ApplicationController
 
 #DELETE /course/:id
 	def destroy 
-		if @course
-			@course.destroy
-			render json: { message: "Course has been deleted successfully."}, status: 200
-		else 
-			render json: { message: "Unable to delete this Course."}, status: 400
-		end 
+		@course.destroy
+		render json: { message: "Course has been deleted successfully."}, status: 200
 	end 
 
 	private 
@@ -50,7 +45,7 @@ class Api::V1::CoursesController < ApplicationController
 	end 
 
 	def find_course
-		@course = Course.find(params[:id])
+		@course = Course.find_by_id(params[:id])
 	end 
 
 
