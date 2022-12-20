@@ -14,16 +14,15 @@ class Api::V1::TutorsController < ApplicationController
 
 	def create
 		@tutor = Tutor.new(tutor_params)
-		if @tutor.save 
+		if @tutor.save
 			render json: @tutor
 		else 
-			render errors: {eror: 'Unable to create Tutor.'}, status: 400
+			render json: {error: 'Unable to create Tutor.'}, status: 400
 		end
 	end 
 
 	def update
-		if @tutor 
-			@tutor.update(tutor_params)
+		if 	@tutor.update(tutor_params)
 			render json: { message: "Tutor has been updated successfully."}, status: 200 
 		else
 			render json: { message: "Unable to update the Tutor"}, status: 400
@@ -31,8 +30,7 @@ class Api::V1::TutorsController < ApplicationController
 	end 
 
 	def destroy 
-		if @tutor
-			@tutor.destroy 
+		if  @tutor.destroy 
 			render json: {message: "Tutor deleted successfully."}, status: 200
 		else 
 			render json: {message: "Unable to delete this Tutor"}, status: 400

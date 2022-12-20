@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe 'Courses', type: :request do
 	describe 'PUT /courses' do 
 		let!(:course) { Course.create(name:'BBA', subject: 'Business')}
-		it 'valid course attributes' do 
+		it 'Update valid course attributes' do 
 			put "/api/v1/courses/#{course.id}", params: {
 				course: {
 					name: 'BBA2',

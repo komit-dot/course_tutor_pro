@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe 'Courses', type: :request do
 	describe 'DELETE /courses' do 
 		let!(:course) { Course.create(name:'BBAA', subject: 'Business')}
-		it 'valid course attributes' do 
+		it 'delete course attributes' do 
 			delete "/api/v1/courses/#{course.id}" 
 			expect(response.status).to eq(200)
 			json = JSON.parse(response.body).deep_symbolize_keys

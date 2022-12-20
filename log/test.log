@@ -1366,3 +1366,684 @@ Processing by Api::V1::CoursesController#create as HTML
 Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 375)
   [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/v1/tutors" for 127.0.0.1 at 2022-12-19 23:50:12 +0530
+Processing by Api::V1::TutorsController#index as HTML
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 5260)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"BCA", "subject"=>"Computer", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer"], ["duration_month", 12], ["created_at", "2022-12-20 09:57:35.723891"], ["updated_at", "2022-12-20 09:57:35.723891"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 21341)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Computer"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 382)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBAA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 09:57:35.734084"], ["updated_at", "2022-12-20 09:57:35.734084"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/courses/1" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Destroy (0.1ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 778)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/v1/courses" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 215)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 09:57:35.744488"], ["updated_at", "2022-12-20 09:57:35.744488"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-20 09:57:35.747430"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 738)
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 09:57:35.751461"], ["updated_at", "2022-12-20 09:57:35.751461"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Business3", "duration_month"=>"36"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 468)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"BCA", "subject"=>"Computer", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer"], ["duration_month", 12], ["created_at", "2022-12-20 09:57:35.759786"], ["updated_at", "2022-12-20 09:57:35.759786"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 619)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Computer"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 375)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 15:27:35 +0530
+Processing by Api::V1::TutorsController#index as HTML
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 2207)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 15:37:40 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 1.9ms | Allocations: 30038)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 15:37:40 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"", "full_name"=>"Bina"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 236)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 15:38:45 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms | Allocations: 30038)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:03:27 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 22ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 27084)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:04:49 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 22ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 27084)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:06:23 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 22ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 27084)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 16:06:23 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"", "full_name"=>"Bina"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 240)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:07:25 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 26ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 27085)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 16:07:25 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"", "full_name"=>"Bina"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 240)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:08:44 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"", "full_name"=>"Bina"}}
+Completed 400 Bad Request in 19ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 25359)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:09:16 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"", "full_name"=>"Bina"}}
+Completed 400 Bad Request in 19ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 25360)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:10:17 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 21ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 27084)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:13:29 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"full_name"=>"Aashish", "mobile_no"=>"1234"}}
+Completed 400 Bad Request in 20ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 25360)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:14:21 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"12", "full_name"=>"Aashish", "mobile_no"=>"1234"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 22ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 27084)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:15:25 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"12", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 22ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 27080)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:20:03 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"12", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 22ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 27079)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:23:44 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"12", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 3177)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:24:00 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"12", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 3177)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:01:24.599294"], ["updated_at", "2022-12-20 11:01:24.599294"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:31:24 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Aashish"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:01:24.658232"], ["updated_at", "2022-12-20 11:01:24.658232"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 23203)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:01:44.510100"], ["updated_at", "2022-12-20 11:01:44.510100"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:31:44 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Aashish"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:01:44.572376"], ["updated_at", "2022-12-20 11:01:44.572376"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 23203)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" ORDER BY "tutors"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:09:46.369604"], ["updated_at", "2022-12-20 11:09:46.369604"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:39:46 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Aashish"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:09:46.426372"], ["updated_at", "2022-12-20 11:09:46.426372"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 23202)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" ORDER BY "tutors"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:09:46.431126"], ["updated_at", "2022-12-20 11:09:46.431126"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 16:39:46 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"", "full_name"=>"Bina"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 386)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/" for 127.0.0.1 at 2022-12-20 16:53:05 +0530
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/" for 127.0.0.1 at 2022-12-20 16:53:05 +0530
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/" for 127.0.0.1 at 2022-12-20 16:59:44 +0530
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/tutors/" for 127.0.0.1 at 2022-12-20 17:00:21 +0530
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/" for 127.0.0.1 at 2022-12-20 17:03:46 +0530
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/" for 127.0.0.1 at 2022-12-20 17:04:38 +0530
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:36:28.521019"], ["updated_at", "2022-12-20 11:36:28.521019"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:37:10.443215"], ["updated_at", "2022-12-20 11:37:10.443215"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:37:10.457732"], ["updated_at", "2022-12-20 11:37:10.457732"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:07:10 +0530
+Processing by Api::V1::TutorsController#update as HTML
+  Parameters: {"tutor"=>{"full_name"=>"", "address"=>"Business3", "mobile_no"=>"3644"}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Update (0.1ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "address" = ?, "mobile_no" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", ""], ["address", "Business3"], ["mobile_no", 3644], ["updated_at", "2022-12-20 11:37:10.503797"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3605)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:40:17.110635"], ["updated_at", "2022-12-20 11:40:17.110635"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:40:17.125094"], ["updated_at", "2022-12-20 11:40:17.125094"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:10:17 +0530
+Processing by Api::V1::TutorsController#update as HTML
+  Parameters: {"tutor"=>{"full_name"=>"", "address"=>"Business3", "mobile_no"=>"3644", "course_id"=>"3333"}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3333], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3442)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:42:03.465264"], ["updated_at", "2022-12-20 11:42:03.465264"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:42:03.479258"], ["updated_at", "2022-12-20 11:42:03.479258"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:12:03 +0530
+Processing by Api::V1::TutorsController#update as HTML
+  Parameters: {"tutor"=>{"full_name"=>"BB", "address"=>"Street", "mobile_no"=>"12111"}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Update (0.1ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "address" = ?, "mobile_no" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "BB"], ["address", "Street"], ["mobile_no", 12111], ["updated_at", "2022-12-20 11:42:03.526343"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3605)
+  [1m[36mTutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:42:25.784411"], ["updated_at", "2022-12-20 11:42:25.784411"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:42:25.798551"], ["updated_at", "2022-12-20 11:42:25.798551"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:12:25 +0530
+Processing by Api::V1::TutorsController#update as HTML
+  Parameters: {"tutor"=>{"full_name"=>"BB", "address"=>"Street", "mobile_no"=>"12111"}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Update (0.1ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "address" = ?, "mobile_no" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "BB"], ["address", "Street"], ["mobile_no", 12111], ["updated_at", "2022-12-20 11:42:25.848760"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3604)
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:42:25.853934"], ["updated_at", "2022-12-20 11:42:25.853934"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:42:25.855685"], ["updated_at", "2022-12-20 11:42:25.855685"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:12:25 +0530
+Processing by Api::V1::TutorsController#update as HTML
+  Parameters: {"tutor"=>{"full_name"=>"", "address"=>"Business3", "mobile_no"=>"3644", "course_id"=>"3333"}, "id"=>"1"}
+  [1m[36mTutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3333], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 769)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:10.265186"], ["updated_at", "2022-12-20 11:45:10.265186"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:45:10.278851"], ["updated_at", "2022-12-20 11:45:10.278851"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:15:10 +0530
+Processing by Api::V1::TutorsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTutor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tutors" WHERE "tutors"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3109)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:50.983397"], ["updated_at", "2022-12-20 11:45:50.983397"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:45:50.997965"], ["updated_at", "2022-12-20 11:45:50.997965"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:15:51 +0530
+Processing by Api::V1::TutorsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTutor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tutors" WHERE "tutors"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 3109)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"BCA", "subject"=>"Computer", "duration_month"=>"12"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BCA"], ["subject", "Computer"], ["duration_month", 12], ["created_at", "2022-12-20 11:45:59.743776"], ["updated_at", "2022-12-20 11:45:59.743776"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 21341)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/v1/courses" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Computer"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 382)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBAA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.752821"], ["updated_at", "2022-12-20 11:45:59.752821"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/courses/1" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::CoursesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Destroy (0.1ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 778)
+  [1m[36mCourse Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/v1/courses" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 215)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.763584"], ["updated_at", "2022-12-20 11:45:59.763584"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"BBA2", "subject"=>"Business2", "duration_month"=>"12"}, "id"=>"1"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "name" = ?, "subject" = ?, "duration_month" = ?, "updated_at" = ? WHERE "courses"."id" = ?[0m  [["name", "BBA2"], ["subject", "Business2"], ["duration_month", 12], ["updated_at", "2022-12-20 11:45:59.766483"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 738)
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.770006"], ["updated_at", "2022-12-20 11:45:59.770006"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/courses/1" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::CoursesController#update as HTML
+  Parameters: {"course"=>{"name"=>"", "subject"=>"Business3", "duration_month"=>"36"}, "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 468)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.774692"], ["updated_at", "2022-12-20 11:45:59.774692"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"Aashish"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Aashish"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:45:59.793386"], ["updated_at", "2022-12-20 11:45:59.793386"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 20655)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" ORDER BY "tutors"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.797297"], ["updated_at", "2022-12-20 11:45:59.797297"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::TutorsController#create as HTML
+  Parameters: {"tutor"=>{"course_id"=>"", "full_name"=>"Bina"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 379)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.802166"], ["updated_at", "2022-12-20 11:45:59.802166"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:45:59.803938"], ["updated_at", "2022-12-20 11:45:59.803938"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::TutorsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTutor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "tutors" WHERE "tutors"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 552)
+  [1m[36mTutor Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tutors"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/v1/tutors" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::TutorsController#index as HTML
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 222)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.812855"], ["updated_at", "2022-12-20 11:45:59.812855"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:45:59.814743"], ["updated_at", "2022-12-20 11:45:59.814743"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::TutorsController#update as HTML
+  Parameters: {"tutor"=>{"full_name"=>"BB", "address"=>"Street", "mobile_no"=>"12111"}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Update (0.1ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "address" = ?, "mobile_no" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "BB"], ["address", "Street"], ["mobile_no", 12111], ["updated_at", "2022-12-20 11:45:59.818108"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 898)
+  [1m[36mTutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Load (0.0ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "subject", "duration_month", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BBA"], ["subject", "Business"], ["duration_month", nil], ["created_at", "2022-12-20 11:45:59.821608"], ["updated_at", "2022-12-20 11:45:59.821608"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutor Create (0.1ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "AA"], ["course_id", 1], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 11:45:59.823354"], ["updated_at", "2022-12-20 11:45:59.823354"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/api/v1/tutors/1" for 127.0.0.1 at 2022-12-20 17:15:59 +0530
+Processing by Api::V1::TutorsController#update as HTML
+  Parameters: {"tutor"=>{"full_name"=>"", "address"=>"Business3", "mobile_no"=>"3644", "course_id"=>"3333"}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3333], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 763)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m

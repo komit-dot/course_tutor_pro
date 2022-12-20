@@ -1,6 +1,5 @@
 require 'rails_helper'
 RSpec.describe "Courses", type: :request do
-
 	describe 'POST /courses' do 
 		it 'valid courses attributes' do 
 			post '/api/v1/courses', params: {
@@ -10,7 +9,6 @@ RSpec.describe "Courses", type: :request do
 					duration_month: 12
 				}
 			}
-
 			expect(response.status).to eq(200)
 			json = JSON.parse(response.body).deep_symbolize_keys
 			expect(json[:name]).to eq('BCA')
@@ -27,9 +25,7 @@ RSpec.describe "Courses", type: :request do
 					subject: 'Computer'
 				}
 			}
-
 			expect(response.status).to eq(400)
-
 			json = JSON.parse(response.body).deep_symbolize_keys
 			expect(json[:error]).to eq("We can not create the Course.")
 			expect(Course.count).to eq(0)

@@ -2571,3 +2571,477 @@ Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1
 NoMethodError (undefined method `destroy' for nil:NilClass):
   
 app/controllers/api/v1/courses_controller.rb:37:in `destroy'
+Started GET "/api/v1/tutors" for ::1 at 2022-12-19 23:48:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36"}
+  [1m[36mTutor Load (0.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 132ms (Views: 32.9ms | ActiveRecord: 2.3ms | Allocations: 23595)
+
+
+Started POST "/api/v1/tutors?tutor[full_name]=%22hhh%22" for ::1 at 2022-12-19 23:51:42 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"hhh\""}}
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms | Allocations: 7714)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:20:in `create'
+Started POST "/api/v1/tutors?tutor[full_name]=%22hhh%22&tutor[course_id]=1" for ::1 at 2022-12-19 23:52:41 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"name"=>"BSC11", "subject"=>"Science", "duration_month"=>"36", "tutor"=>{"full_name"=>"\"hhh\"", "course_id"=>"1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms | Allocations: 9878)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:20:in `create'
+Started GET "/api/v1/tutors" for ::1 at 2022-12-19 23:53:45 +0530
+Processing by Api::V1::TutorsController#index as */*
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1737)
+
+
+Started POST "/api/v1/tutors?tutor[course_id]=1&tutor[full_name]=%22jj%22" for ::1 at 2022-12-19 23:55:28 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutor"=>{"course_id"=>"1", "full_name"=>"\"jj\""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 3492)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:20:in `create'
+Started GET "/api/v1/courses" for ::1 at 2022-12-20 15:24:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 139ms (Views: 36.2ms | ActiveRecord: 2.5ms | Allocations: 22592)
+
+
+Started GET "/api/v1/tutors" for ::1 at 2022-12-20 15:27:10 +0530
+Processing by Api::V1::TutorsController#index as */*
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 0.6ms | Allocations: 19169)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+Started POST "/api/v1/tutors?tutor[course_id]=2&tutor[full_name]=%22hhh%22" for ::1 at 2022-12-20 15:43:59 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutor"=>{"course_id"=>"2", "full_name"=>"\"hhh\""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.6ms | Allocations: 15269)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:20:in `create'
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 15:45:17 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutur"=>{"course_id"=>"2"}, "tutor"=>{"full_name"=>"\"hhh\""}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1707)
+
+
+  
+ActionView::MissingTemplate (Missing template api/v1/tutors/create, application/create with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actiontext-7.0.4/app/views"
+  * "/usr/local/rvm/gems/ruby-2.7.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/index
+               layouts/application
+               layouts/mailer):
+  
+app/controllers/api/v1/tutors_controller.rb:20:in `create'
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 15:46:28 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutur"=>{"course_id"=>"2"}, "tutor"=>{"full_name"=>"\"hhh\""}}
+Completed 400 Bad Request in 9ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 6220)
+
+
+Started GET "/api/v1/course" for ::1 at 2022-12-20 15:47:10 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/course"):
+  
+Started GET "/api/v1/courses" for ::1 at 2022-12-20 15:47:21 +0530
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.8ms | Allocations: 3754)
+
+
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 15:47:37 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutur"=>{"course_id"=>"4"}, "tutor"=>{"full_name"=>"\"hhh\""}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 695)
+
+
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 15:48:17 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutor"=>{"full_name"=>"\"hhh\""}}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 697)
+
+
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 15:49:20 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutur"=>{"course_id"=>"4"}, "tutor"=>{"full_name"=>"\"hhh\""}}
+Completed 422 Unprocessable Entity in 119ms (ActiveRecord: 0.8ms | Allocations: 9082)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Course must exist):
+  
+app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 15:50:06 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTutor Create (0.3ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"hhh\""], ["course_id", 4], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 10:20:06.762333"], ["updated_at", "2022-12-20 10:20:06.762333"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (127.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 200 OK in 149ms (Views: 1.1ms | ActiveRecord: 129.4ms | Allocations: 11546)
+
+
+Started GET "/api/v1/tutor/11" for ::1 at 2022-12-20 15:54:13 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/tutor/11"):
+  
+Started GET "/api/v1/tutors" for ::1 at 2022-12-20 15:54:54 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1908)
+
+
+Started GET "/api/v1/tutors/11" for ::1 at 2022-12-20 15:55:12 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"11"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1226)
+
+
+Started PUT "/api/v1/tutors/11?tutor[full_name]=%22hhhddddd%22" for ::1 at 2022-12-20 15:56:03 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"tutor"=>{"full_name"=>"\"hhhddddd\""}, "id"=>"11"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTutor Update (0.2ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "\"hhhddddd\""], ["updated_at", "2022-12-20 10:26:03.102287"], ["id", 11]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (417.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+Completed 200 OK in 425ms (Views: 0.7ms | ActiveRecord: 417.7ms | Allocations: 3178)
+
+
+Started PUT "/api/v1/tutors/11?tutor[full_name]=%22%22" for ::1 at 2022-12-20 15:56:33 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"tutor"=>{"full_name"=>"\"\""}, "id"=>"11"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTutor Update (0.2ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "\"\""], ["updated_at", "2022-12-20 10:26:33.189775"], ["id", 11]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (78.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 78.9ms | Allocations: 3154)
+
+
+Started PUT "/api/v1/tutors/11?tutor[course_id]=111&tutor[full_name]=%22%22" for ::1 at 2022-12-20 15:56:56 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"tutor"=>{"course_id"=>"111", "full_name"=>"\"\""}, "id"=>"11"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+Completed 400 Bad Request in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 3235)
+
+
+Started GET "/api/v1/tutors/11" for ::1 at 2022-12-20 15:57:29 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"11"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 639)
+
+
+Started DELETE "/api/v1/tutors/11" for ::1 at 2022-12-20 15:57:38 +0530
+Processing by Api::V1::TutorsController#destroy as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"11"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:33:in `destroy'
+  [1m[36mTutor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tutors" WHERE "tutors"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (75.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:33:in `destroy'
+Completed 200 OK in 80ms (Views: 0.2ms | ActiveRecord: 75.6ms | Allocations: 1901)
+
+
+Started DELETE "/api/v1/tutors/1111" for ::1 at 2022-12-20 15:58:07 +0530
+Processing by Api::V1::TutorsController#destroy as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"1111"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1111], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 871)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=1111):
+  
+app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Started DELETE "/api/v1/tutors/11" for ::1 at 2022-12-20 15:58:28 +0530
+Processing by Api::V1::TutorsController#destroy as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"11"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=11):
+  
+app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Started GET "/api/v1/tutors/12" for ::1 at 2022-12-20 15:59:19 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"12"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=12):
+  
+app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Started GET "/api/v1/tutors/13" for ::1 at 2022-12-20 15:59:27 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"13"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 870)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tutor with 'id'=13):
+  
+app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Started GET "/api/v1/tutors/4" for ::1 at 2022-12-20 15:59:37 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"4"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 638)
+
+
+Started DELETE "/api/v1/tutors/4?tutor[course_id]=4" for ::1 at 2022-12-20 16:00:24 +0530
+Processing by Api::V1::TutorsController#destroy as */*
+  Parameters: {"tutor"=>{"course_id"=>"4"}, "id"=>"4"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:33:in `destroy'
+  [1m[36mTutor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tutors" WHERE "tutors"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (69.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:33:in `destroy'
+Completed 200 OK in 75ms (Views: 0.5ms | ActiveRecord: 69.7ms | Allocations: 1887)
+
+
+Started DELETE "/api/v1/tutors" for ::1 at 2022-12-20 16:01:48 +0530
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/tutors"):
+  
+Started GET "/api/v1/tutors" for ::1 at 2022-12-20 16:01:58 +0530
+Processing by Api::V1::TutorsController#index as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1606)
+
+
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 16:02:43 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTutor Create (0.2ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"hhh\""], ["course_id", 4], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 10:32:43.177462"], ["updated_at", "2022-12-20 10:32:43.177462"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (66.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 200 OK in 74ms (Views: 0.8ms | ActiveRecord: 66.7ms | Allocations: 2713)
+
+
+Started POST "/api/v1/tutors" for ::1 at 2022-12-20 16:02:46 +0530
+Processing by Api::V1::TutorsController#create as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTutor Create (0.2ms)[0m  [1m[32mINSERT INTO "tutors" ("full_name", "course_id", "address", "mobile_no", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "\"hhh\""], ["course_id", 4], ["address", nil], ["mobile_no", nil], ["email", nil], ["created_at", "2022-12-20 10:32:46.264288"], ["updated_at", "2022-12-20 10:32:46.264288"]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (76.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:17:in `create'
+Completed 200 OK in 83ms (Views: 0.8ms | ActiveRecord: 76.9ms | Allocations: 2714)
+
+
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/api/v1/tutors" for ::1 at 2022-12-20 16:54:15 +0530
+Processing by Api::V1::TutorsController#index as */*
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors"[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1993)
+
+
+Started GET "/api/v1/tutors/1" for ::1 at 2022-12-20 16:54:25 +0530
+Processing by Api::V1::TutorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started PUT "/api/v1/tutors/1" for ::1 at 2022-12-20 17:08:22 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"tutor"=>{"full_name"=>"\"hhh\""}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+Completed 400 Bad Request in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3415)
+
+
+Started PUT "/api/v1/tutors/1" for ::1 at 2022-12-20 17:08:36 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"tutor"=>{"course_id"=>"4", "full_name"=>"\"hhh\""}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTutor Update (0.2ms)[0m  [1m[33mUPDATE "tutors" SET "full_name" = ?, "course_id" = ?, "updated_at" = ? WHERE "tutors"."id" = ?[0m  [["full_name", "\"hhh\""], ["course_id", 4], ["updated_at", "2022-12-20 11:38:36.926666"], ["id", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (73.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+Completed 200 OK in 80ms (Views: 0.5ms | ActiveRecord: 74.1ms | Allocations: 3160)
+
+
+Started PUT "/api/v1/tutors/1" for ::1 at 2022-12-20 17:10:52 +0530
+Processing by Api::V1::TutorsController#update as */*
+  Parameters: {"tutor"=>{"course_id"=>"47777", "full_name"=>"\"hhh\""}, "id"=>"1"}
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:47:in `find_tutor'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 47777], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/tutors_controller.rb:25:in `update'
+Completed 400 Bad Request in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3238)
+
+
