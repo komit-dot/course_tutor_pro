@@ -32,6 +32,16 @@ class Api::V1::CoursesController < ApplicationController
 		end 
 	end 
 
+	def list_tutors
+		courses = Course.includes(:tutors)
+		response_array = []
+		courses.each do |course|
+			response_array << {course: course, tutors: course.tutors}
+		end 
+		render json: response_array
+	end 
+
+
 #DELETE /course/:id
 	def destroy 
 		@course.destroy

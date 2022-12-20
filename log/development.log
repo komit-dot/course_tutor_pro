@@ -3045,3 +3045,304 @@ Processing by Api::V1::TutorsController#update as */*
 Completed 400 Bad Request in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3238)
 
 
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mTutor Load (0.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" = ?[0m  [["course_id", 18]]
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" = ?[0m  [["course_id", 4]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mTutor Load (0.6ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 18:50:33 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  Parameters: {"tutor"=>{"course_id"=>"47777", "full_name"=>"\"hhh\""}}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms | Allocations: 15225)
+
+
+  
+NameError (undefined local variable or method `tutor_lists' for #<Api::V1::CoursesController:0x000000000292c0>
+Did you mean?  @tutor_lists):
+  
+app/controllers/api/v1/courses_controller.rb:39:in `block in list_tutors'
+app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Started GET "/api/v1/courses/tutor_lists" for ::1 at 2022-12-20 18:52:59 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"tutor"=>{"course_id"=>"47777", "full_name"=>"\"hhh\""}, "id"=>"tutor_lists"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:63:in `find_course'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1327)
+
+
+Started GET "/api/v1/courses/tutor_lists" for ::1 at 2022-12-20 18:55:07 +0530
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"tutor_lists"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:63:in `find_course'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 534)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 18:56:15 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 4687)
+
+
+  
+NameError (undefined local variable or method `tutor_lists' for #<Api::V1::CoursesController:0x00000000029900>
+Did you mean?  @tutor_lists):
+  
+app/controllers/api/v1/courses_controller.rb:39:in `block in list_tutors'
+app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 18:58:44 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 9973)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:01:50 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 9943)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:02:25 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 11568)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:04:14 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 11570)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:14:11 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms | Allocations: 11699)
+
+
+  
+NameError (undefined local variable or method `ttr' for #<Api::V1::CoursesController:0x00000000044430>):
+  
+app/controllers/api/v1/courses_controller.rb:39:in `block in list_tutors'
+app/controllers/api/v1/courses_controller.rb:37:in `list_tutors'
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:15:12 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 11797)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:17:53 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 11591)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:18:05 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 11859)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:37:42 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 11104)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:40:24 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+...ttr << {course: {course.tutors}.course_id}
+...                              ^
+/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:41:38 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+...ourse: {course.course_idtutors}}
+...                              ^
+):
+  
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:41:57 +0530
+  
+ActionController::RoutingError (uninitialized constant Api::V1::CoursesController
+Did you mean?  Api::V1::TutorsController):
+  
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:42:51 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+...ttr << {course: {course.tutors}
+...                              ^
+):
+  
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:43:29 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 11953)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:46:27 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected ':', expecting =>
+			ttr << {course.course_id: (course.tutors)}
+			                        ^
+/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting `end'
+...rse.course_id: (course.tutors)}
+...                              ^
+/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected ':', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting `end'
+app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected ':', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting `end'
+app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected ':', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting `end'
+app/controllers/api/v1/courses_controller.rb:67: syntax error, unexpected `end', expecting end-of-input
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:48:00 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 12037)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:49:30 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+...urse: {course.tutors.course_id}}
+...                              ^
+):
+  
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:51:22 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+...rse: {course_id:{course.tutors}}
+...                              ^
+):
+  
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:51:59 +0530
+  
+SyntaxError (/home/ubuntu2004/Desktop/komit_ruby_project/course_tutor_pro/app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+...se: {course_id: {course.tutors}}
+...                              ^
+):
+  
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/courses_controller.rb:40: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:53:19 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 11952)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 19:54:36 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 11738)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 21:57:54 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.3ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 21ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 9753)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 22:01:15 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.2ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 19ms (Views: 2.0ms | ActiveRecord: 1.6ms | Allocations: 11661)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 22:03:43 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 19ms (Views: 3.1ms | ActiveRecord: 1.5ms | Allocations: 11861)
+
+
+Started GET "/api/v1/courses/list_tutors" for ::1 at 2022-12-20 22:08:52 +0530
+Processing by Api::V1::CoursesController#list_tutors as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+  [1m[36mTutor Load (0.1ms)[0m  [1m[34mSELECT "tutors".* FROM "tutors" WHERE "tutors"."course_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 4], ["course_id", 5], ["course_id", 6], ["course_id", 7], ["course_id", 8], ["course_id", 9], ["course_id", 10], ["course_id", 13], ["course_id", 14], ["course_id", 15], ["course_id", 17], ["course_id", 18]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `list_tutors'
+Completed 200 OK in 17ms (Views: 2.6ms | ActiveRecord: 1.4ms | Allocations: 11661)
+
+
+  [1m[36mCourse Pluck (0.2ms)[0m  [1m[34mSELECT "courses"."name" FROM "courses"[0m
